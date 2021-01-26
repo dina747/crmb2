@@ -7,6 +7,9 @@ const Render = Matter.Render;
 var dustbinObj, paperObject,groundObject	
 var world;
 
+function preload () {
+	binimage=loadImage("dina.png")
+}
 
 function setup() {
 	createCanvas(1600, 700);
@@ -19,7 +22,8 @@ function setup() {
 	paperObject=new paper(200,450,40);
 	groundObject=new ground(width/2,670,width,20);
 	//Create a Ground
-	
+	bin=createSprite(1200,650,200,200)
+	bin.addImage(binimage)
 
 	var render = Render.create({
 	  element: document.body,
@@ -46,7 +50,7 @@ function draw() {
   groundObject.display();
   
  
-  
+  drawSprites();
   
  
 }
